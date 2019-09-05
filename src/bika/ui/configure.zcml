@@ -7,7 +7,13 @@
   <!-- Static resource directory -->
   <browser:resourceDirectory
       name="bika.lims.images"
-      directory="static/images"
+      directory="static/lims/images"
+      layer="bika.ui.interfaces.IBikaUILayer"
+      />
+
+  <browser:resourceDirectory
+      name="bika.health.images"
+      directory="static/health/images"
       layer="bika.ui.interfaces.IBikaUILayer"
       />
 
