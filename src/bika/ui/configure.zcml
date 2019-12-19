@@ -4,6 +4,8 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone">
 
+  <include package=".browser" />
+
   <!-- Static resource directory -->
   <browser:resourceDirectory
       name="bika.lims.images"
