@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="bika.ui">
+
+  <browser:page
+      for="*"
+      name="clean"
+      class="bika.ui.browser.view.CleanView"
+      attribute="clean"
+      permission="cmf.ManagePortal"
+      layer="bika.ui.interfaces.IBikaUILayer"
+      />
+
+</configure>
