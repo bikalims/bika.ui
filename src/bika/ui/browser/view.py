@@ -1,4 +1,5 @@
 from AccessControl import getSecurityManager
+from bika.lims import logger
 from OFS.ObjectManager import BeforeDeleteException
 from Products.CMFCore.permissions import DeleteObjects
 from Products.Five import BrowserView
@@ -39,22 +40,22 @@ class CleanView(BrowserView):
         #
         # Delete all ARs and setup data
         #
-        print("Start")
+        logger.info("Start")
 
         confirm = form.get('confirm', 'false').lower() == 'true'
         detail = form.get('detail', 'false').lower() == 'true'
         if not confirm:
-            print("Confirm not provided - nothing will be deleted")
+            logger.info("Confirm not provided - nothing will be deleted")
 
         sm = getSecurityManager()
         bac = context.bika_analysis_catalog
         for pt in bac_portal_types:
             brains = bac(portal_type=pt)
-            print('%s = %s' % (pt, len(brains)))
+            logger.info('%s = %s' % (pt, len(brains)))
             for brain in brains:
                 obj = brain.getObject()
                 if detail:
-                    print('%s %s %s' % (pt, obj.getId(), brain.getPath()))
+                    logger.info('%s %s %s' % (pt, obj.getId(), brain.getPath()))
                 if confirm:
                     try:
                         if not sm.checkPermission(DeleteObjects, obj):
@@ -68,11 +69,11 @@ class CleanView(BrowserView):
         bsc = context.bika_setup_catalog
         for pt in bsc_portal_types:
             brains = bsc(portal_type=pt)
-            print('%s = %s' % (pt, len(brains)))
+            logger.info('%s = %s' % (pt, len(brains)))
             for brain in brains:
                 obj = brain.getObject()
                 if detail:
-                    print('%s %s %s' % (pt, obj.getId(), brain.getPath()))
+                    logger.info('%s %s %s' % (pt, obj.getId(), brain.getPath()))
                 if confirm:
                     try:
                         if not sm.checkPermission(DeleteObjects, obj):
@@ -86,11 +87,11 @@ class CleanView(BrowserView):
         pc = context.portal_catalog
         for pt in pc_portal_types:
             brains = pc(portal_type=pt)
-            print('%s = %s' % (pt, len(brains)))
+            logger.info('%s = %s' % (pt, len(brains)))
             for brain in brains:
                 obj = brain.getObject()
                 if detail:
-                    print('%s %s %s' % (pt, obj.getId(), brain.getPath()))
+                    logger.info('%s %s %s' % (pt, obj.getId(), brain.getPath()))
                 if confirm:
                     try:
                         if not sm.checkPermission(DeleteObjects, obj):
@@ -104,5 +105,5 @@ class CleanView(BrowserView):
                     except Exception as e:
                         return "Failed: %s %s: %s" % (pt, obj.getId(), e)
 
-        print("End")
+        logger.info("End")
         return 'Done'
