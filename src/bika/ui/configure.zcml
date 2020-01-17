@@ -2,7 +2,10 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:five="http://namespaces.zope.org/five"
     xmlns:plone="http://namespaces.plone.org/plone">
+
+  <five:registerPackage package="." initialize=".initialize"/>
 
   <include package=".browser" />
 

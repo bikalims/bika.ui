@@ -6,7 +6,9 @@
 
 import logging
 
-logger = logging.getLogger("bika.ui")
+PRODUCT_NAME = "bika.ui"
+PROFILE_ID = "profile-{}:default".format(PRODUCT_NAME)
+logger = logging.getLogger(PRODUCT_NAME)
 
 
 def initialize(context):
