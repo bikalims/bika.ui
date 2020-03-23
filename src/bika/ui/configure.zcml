@@ -22,6 +22,12 @@
       layer="bika.ui.interfaces.IBikaUILayer"
       />
 
+  <browser:resourceDirectory
+      name="senaite.sampleimporter.static"
+      directory="static/sampleimporter/"
+      layer="bika.ui.interfaces.IBikaUILayer"
+      />
+
   <genericsetup:registerProfile
       name="default"
       title="BIKA UI"
