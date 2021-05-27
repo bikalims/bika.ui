@@ -1,0 +1,22 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="bika.ui">
+
+  <!-- Override Bootstrap Helper View -->
+  <browser:page
+      name="bootstrapview"
+      for="*"
+      class=".bootstrap.BootstrapView"
+      allowed_interface="senaite.core.browser.bootstrap.bootstrap.IBootstrapView"
+      permission="zope2.View"
+      layer="bika.ui.interfaces.IBikaUILayer"/>
+
+  <!-- SENAITE Setup View -->
+  <browser:page
+      name="lims-setup"
+      for="*"
+      class=".setupview.SetupView"
+      permission="zope2.View"
+      layer="bika.ui.interfaces.IBikaUILayer"/>
+
+</configure>

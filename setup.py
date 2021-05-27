@@ -29,6 +29,7 @@ setup(
     install_requires=[
         "setuptools",
         "senaite.lims",
+        "collective.localstyles",
     ],
     extras_require={
         "test": [

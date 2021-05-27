@@ -3,15 +3,31 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:plone="http://namespaces.plone.org/plone">
 
   <five:registerPackage package="." initialize=".initialize"/>
+  <includeDependencies package="." />
 
   <include package=".browser" />
 
+  <!-- portal skins -->
+  <cmf:registerDirectory
+      name="skins"
+      directory="skins"
+      recursive="True"
+      />
+
   <!-- Static resource directory -->
   <browser:resourceDirectory
-      name="bika.lims.images"
+      name="bika.ui.styles"
+      directory="static/lims/styles"
+      layer="bika.ui.interfaces.IBikaUILayer"
+      />
+
+  <!-- Static resource directory -->
+  <browser:resourceDirectory
+      name="bika.ui.images"
       directory="static/lims/images"
       layer="bika.ui.interfaces.IBikaUILayer"
       />
@@ -34,6 +50,7 @@
       directory="profiles/default"
       description="Installs the bika.ui add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler="bika.ui.setuphandlers.post_install"
       />
 
 </configure>

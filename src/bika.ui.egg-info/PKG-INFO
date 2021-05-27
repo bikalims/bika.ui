@@ -1,4 +1,4 @@
-Metadata-Version: 1.1
+Metadata-Version: 2.1
 Name: bika.ui
 Version: 1.0.1
 Summary: Custom user interface for SENAITE LIMS
@@ -13,3 +13,4 @@ Classifier: Framework :: Zope2
 Classifier: Programming Language :: Python
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Provides-Extra: test
