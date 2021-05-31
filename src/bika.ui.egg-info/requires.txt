@@ -1,5 +1,6 @@
 setuptools
 senaite.lims
+collective.localstyles
 
 [test]
 Products.PloneTestCase

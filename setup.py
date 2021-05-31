@@ -30,6 +30,7 @@ setup(
         "setuptools",
         "senaite.lims",
         "collective.localstyles",
+        "z3c.jbot"
     ],
     extras_require={
         "test": [

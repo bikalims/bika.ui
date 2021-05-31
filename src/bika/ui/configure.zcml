@@ -36,4 +36,9 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <browser:jbot
+     layer="senaite.core.interfaces.ISenaiteCore"
+     directory="overrides" />
+
+
 </configure>
