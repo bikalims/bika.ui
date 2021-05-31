@@ -36,4 +36,8 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <browser:jbot
+     layer="bika.lims.interfaces.IBikaLIMS"
+     directory="overrides" />
+
 </configure>

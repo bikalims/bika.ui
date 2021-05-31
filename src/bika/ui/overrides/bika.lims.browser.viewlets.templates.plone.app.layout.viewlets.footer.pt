@@ -1,0 +1,19 @@
+<footer i18n:domain="senaite.core"
+        id="senaite-footer">
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr/>
+      <!-- footer portlets -->
+      <div tal:on-error="nothing" tal:replace="structure view/render_footer_portlets" />
+      <div style="float: right">
+        <ul class="nav nav-pills">
+          <li><a class="nav-link" href="mailto:info@bikalabs.com?subject=Please subscribe me to Bika Slack" title="Chat" target="_blank">Chat Room</a></li>
+          <li><a class="nav-link" href="https://users.bikalims.org" title="User Group" target="_blank">User Group</a></li>
+          <li><a class="nav-link" href="http://eepurl.com/hrI0nD" title="Newsletter" target="_blank">Newsletter</a></li>
+          <li><a class="nav-link" href="https://twitter.com/BikaLIMS" title="Twitter" target="_blank">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

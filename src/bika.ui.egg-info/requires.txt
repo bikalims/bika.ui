@@ -1,5 +1,6 @@
 setuptools
 senaite.lims
+z3c.jbot
 
 [test]
 Products.PloneTestCase

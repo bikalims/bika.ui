@@ -29,6 +29,7 @@ setup(
     install_requires=[
         "setuptools",
         "senaite.lims",
+        "z3c.jbot",
     ],
     extras_require={
         "test": [
