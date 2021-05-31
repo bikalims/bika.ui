@@ -13,7 +13,7 @@
                  title="This site was built using the Plone Open Source CMS/WCM."
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
-                BikaLIMS,</a>
+                Bika LIMS,</a>
                 <a href="https://github.com/senaite"
                  title="This site was built using the Plone Open Source CMS/WCM."
                  i18n:attributes="title title_built_with_plone;"
