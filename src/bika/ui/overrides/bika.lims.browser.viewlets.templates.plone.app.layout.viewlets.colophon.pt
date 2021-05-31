@@ -10,22 +10,22 @@
             <li i18n:translate="label_powered_by">
                 <span i18n:translate="labwl_powered_by">Powered by</span>
                 <a href="http://bikalims.org"
-                 title="This site was built using the Plone Open Source CMS/WCM."
+                 title="This is a Bika LIMS installation"
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
                 Bika LIMS,</a>
                 <a href="https://github.com/senaite"
-                 title="This site was built using the Plone Open Source CMS/WCM."
+                 title="Senaite LIMS at its core"
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
                 Senaite,</a>
                 <a href="http://plone.org"
-                 title="This site was built using the Plone Open Source CMS/WCM."
+                 title=" Built in the Plone CMS framework"
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
                 Plone</a>
                 <a href="http://python.org"
-                 title="This site was built using the Python."
+                 title="Coded in Python"
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
                 &amp; Python</a>
