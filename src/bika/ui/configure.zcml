@@ -53,4 +53,9 @@
       post_handler="bika.ui.setuphandlers.post_install"
       />
 
+  <browser:jbot
+     layer="senaite.core.interfaces.ISenaiteCore"
+     directory="overrides" />
+
+
 </configure>

@@ -12,6 +12,7 @@ src/bika.ui.egg-info/requires.txt
 src/bika.ui.egg-info/top_level.txt
 src/bika/ui/__init__.py
 src/bika/ui/interfaces.py
+src/bika/ui/setuphandlers.py
 src/bika/ui/browser/__init__.py
 src/bika/ui/browser/bootstrap.py
 src/bika/ui/browser/listings.py

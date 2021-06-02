@@ -1,5 +1,7 @@
 setuptools
 senaite.lims
+collective.localstyles
+z3c.jbot
 
 [test]
 Products.PloneTestCase

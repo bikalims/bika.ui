@@ -1,8 +1,8 @@
 #senaite-toolbar {
-    background-color: lightblue;
+    background-color: white;
 }
 #senaite-toolbar a {
-    color: black;
+    color: #293333;
 }
 #senaite-toolbar a:hover {
     color: darkgrey;

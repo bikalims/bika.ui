@@ -13,14 +13,3 @@ def post_install(portal_setup):
     portal = context.getSite()  # noqa
 
     logger.info("{} post-install handler [DONE]".format(PRODUCT_NAME.upper()))
-
-
-def install(context):
-    """Install handler
-    """
-    import pdb; pdb.set_trace()
-    if context.readDataFile("bika.ui.txt") is None:
-        return
-
-    logger.info("BIKA UI install handler [BEGIN]")
-    portal = context.getSite()
