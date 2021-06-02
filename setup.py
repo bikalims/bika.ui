@@ -2,12 +2,12 @@
 
 from setuptools import setup, find_packages
 
-version = "1.0.1"
+version = "2.0.1"
 
 setup(
     name="bika.ui",
     version=version,
-    description="Custom user interface for SENAITE LIMS",
+    description="Custom user interface for SENAITE LIMS 2",
     long_description='',
     classifiers=[
         "Framework :: Plone",
@@ -29,6 +29,8 @@ setup(
     install_requires=[
         "setuptools",
         "senaite.lims",
+        "collective.localstyles",
+        "z3c.jbot"
     ],
     extras_require={
         "test": [
