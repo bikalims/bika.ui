@@ -21,13 +21,10 @@
 import os
 from bika.lims import api
 from plone.memoize.instance import memoize
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from senaite.core.browser.viewlets.listings import ListingTableTitleViewlet as LTTV
 
 
 class ListingTableTitleViewlet(LTTV):
-
-    # index = ViewPageTemplateFile("templates/listingtitle.pt")
 
     @property
     @memoize

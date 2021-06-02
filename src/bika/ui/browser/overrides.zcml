@@ -9,14 +9,16 @@
       class=".bootstrap.BootstrapView"
       allowed_interface="senaite.core.browser.bootstrap.bootstrap.IBootstrapView"
       permission="zope2.View"
-      layer="bika.ui.interfaces.IBikaUILayer"/>
+      layer="senaite.core.interfaces.ISenaiteCore"/>
 
-  <!-- SENAITE Setup View -->
-  <browser:page
-      name="lims-setup"
-      for="*"
-      class=".setupview.SetupView"
+
+  <!-- Listing Table: Title Viewlet -->
+  <browser:viewlet
+      name="senaite.core.listings.title"
+      manager="senaite.core.browser.viewlets.interfaces.IListingTableTitle"
+      class=".listings.ListingTableTitleViewlet"
       permission="zope2.View"
-      layer="bika.ui.interfaces.IBikaUILayer"/>
+      layer="senaite.core.interfaces.ISenaiteCore"
+      />
 
 </configure>

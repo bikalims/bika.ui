@@ -12,13 +12,4 @@
       layer="bika.ui.interfaces.IBikaUILayer"
       />
 
-  <!-- Listing Table: Title Viewlet -->
-  <browser:viewlet
-      name="bika.ui.listings.title"
-      manager="senaite.core.browser.viewlets.interfaces.IListingTableTitle"
-      class=".listings.ListingTableTitleViewlet"
-      permission="zope2.View"
-      layer="bika.ui.interfaces.IBikaUILayer"/>
-      />
-
 </configure>
