@@ -11,13 +11,6 @@
 
   <include package=".browser" />
 
-  <!-- portal skins -->
-  <cmf:registerDirectory
-      name="skins"
-      directory="skins"
-      recursive="True"
-      />
-
   <!-- Static resource directory -->
   <browser:resourceDirectory
       name="bika.lims.styles"
