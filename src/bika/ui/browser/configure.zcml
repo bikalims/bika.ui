@@ -4,7 +4,7 @@
         xmlns="http://namespaces.zope.org/zope"
         i18n_domain="bika.ui">
 
-<include package="plone.resource"/>
+    <include package="plone.resource"/>
     <plone:static directory="static" type="plone" name="bika.ui.static"/>
 
     <browser:viewlet
@@ -14,22 +14,22 @@
             permission="zope2.View"
             layer="bika.ui.interfaces.IBikaUILayer"/>
 
-  <browser:page
-      for="*"
-      name="clean"
-      class="bika.ui.browser.view.CleanView"
-      attribute="clean"
-      permission="cmf.ManagePortal"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
+    <browser:page
+            for="*"
+            name="clean"
+            class="bika.ui.browser.view.CleanView"
+            attribute="clean"
+            permission="cmf.ManagePortal"
+            layer="bika.ui.interfaces.IBikaUILayer"
+    />
 
-  <!-- Listing Table: Title Viewlet -->
-  <browser:viewlet
-      name="bika.ui.listings.title"
-      manager="senaite.core.browser.viewlets.interfaces.IListingTableTitle"
-      class=".listings.ListingTableTitleViewlet"
-      permission="zope2.View"
-      layer="bika.ui.interfaces.IBikaUILayer"/>
-      />
+    <!-- Listing Table: Title Viewlet -->
+    <browser:viewlet
+            name="bika.ui.listings.title"
+            manager="senaite.core.browser.viewlets.interfaces.IListingTableTitle"
+            class=".listings.ListingTableTitleViewlet"
+            permission="zope2.View"
+            layer="bika.ui.interfaces.IBikaUILayer"/>
+    />
 
 </configure>
