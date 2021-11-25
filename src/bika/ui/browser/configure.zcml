@@ -14,15 +14,6 @@
             permission="zope2.View"
             layer="bika.ui.interfaces.IBikaUILayer"/>
 
-    <browser:page
-            for="*"
-            name="clean"
-            class="bika.ui.browser.view.CleanView"
-            attribute="clean"
-            permission="cmf.ManagePortal"
-            layer="bika.ui.interfaces.IBikaUILayer"
-    />
-
     <!-- Listing Table: Title Viewlet -->
     <browser:viewlet
             name="bika.ui.listings.title"
