@@ -1,29 +1,14 @@
 <configure
         xmlns="http://namespaces.zope.org/zope"
-        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
         xmlns:browser="http://namespaces.zope.org/browser"
         xmlns:five="http://namespaces.zope.org/five"
-        xmlns:cmf="http://namespaces.zope.org/cmf"
         xmlns:plone="http://namespaces.plone.org/plone">
 
     <five:registerPackage package="." initialize=".initialize"/>
     <includeDependencies package="."/>
+    <browser:jbot directory="jbot" layer="bika.ui.interfaces.IBikaUILayer"/>
 
     <include package=".browser"/>
-
-    <genericsetup:registerProfile
-            name="default"
-            title="BIKA UI"
-            directory="profiles/default"
-            description="Installs the bika.ui add-on."
-            provides="Products.GenericSetup.interfaces.EXTENSION"
-            post_handler="bika.ui.setuphandlers.post_install"
-    />
-
-    <browser:jbot
-            directory="jbot"
-            layer="bika.ui.interfaces.IBikaUILayer"
-    />
-
+    <include file="profiles.zcml"/>
 
 </configure>
