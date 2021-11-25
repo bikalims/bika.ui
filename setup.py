@@ -29,7 +29,6 @@ setup(
     install_requires=[
         "setuptools",
         "senaite.lims",
-        "collective.localstyles",
         "z3c.jbot"
     ],
     extras_require={
