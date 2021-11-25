@@ -1,54 +1,55 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:cmf="http://namespaces.zope.org/cmf"
-    xmlns:plone="http://namespaces.plone.org/plone">
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:five="http://namespaces.zope.org/five"
+        xmlns:cmf="http://namespaces.zope.org/cmf"
+        xmlns:plone="http://namespaces.plone.org/plone">
 
-  <five:registerPackage package="." initialize=".initialize"/>
-  <includeDependencies package="." />
+    <five:registerPackage package="." initialize=".initialize"/>
+    <includeDependencies package="."/>
 
-  <include package=".browser" />
+    <include package=".browser"/>
 
-  <!-- Static resource directory -->
-  <browser:resourceDirectory
-      name="bika.ui.styles"
-      directory="static/lims/styles"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
+    <!-- Static resource directory -->
+    <browser:resourceDirectory
+            name="bika.ui.styles"
+            directory="static/lims/styles"
+            layer="bika.ui.interfaces.IBikaUILayer"
+    />
 
-  <!-- Static resource directory -->
-  <browser:resourceDirectory
-      name="bika.ui.images"
-      directory="static/lims/images"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
+    <!-- Static resource directory -->
+    <browser:resourceDirectory
+            name="bika.ui.images"
+            directory="static/lims/images"
+            layer="bika.ui.interfaces.IBikaUILayer"
+    />
 
-  <browser:resourceDirectory
-      name="bika.health.images"
-      directory="static/health/images"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
+    <browser:resourceDirectory
+            name="bika.health.images"
+            directory="static/health/images"
+            layer="bika.ui.interfaces.IBikaUILayer"
+    />
 
-  <browser:resourceDirectory
-      name="senaite.sampleimporter.static"
-      directory="static/sampleimporter/"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
+    <browser:resourceDirectory
+            name="senaite.sampleimporter.static"
+            directory="static/sampleimporter/"
+            layer="bika.ui.interfaces.IBikaUILayer"
+    />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="BIKA UI"
-      directory="profiles/default"
-      description="Installs the bika.ui add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler="bika.ui.setuphandlers.post_install"
-      />
+    <genericsetup:registerProfile
+            name="default"
+            title="BIKA UI"
+            directory="profiles/default"
+            description="Installs the bika.ui add-on."
+            provides="Products.GenericSetup.interfaces.EXTENSION"
+            post_handler="bika.ui.setuphandlers.post_install"
+    />
 
-  <browser:jbot
-     layer="senaite.core.interfaces.ISenaiteCore"
-     directory="overrides" />
+    <browser:jbot
+            directory="jbot"
+            layer="bika.ui.interfaces.IBikaUILayer"
+    />
 
 
 </configure>
