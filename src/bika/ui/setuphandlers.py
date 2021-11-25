@@ -1,6 +1,13 @@
-from bika.ui import logger
 from bika.ui import PRODUCT_NAME
 from bika.ui import PROFILE_ID
+from bika.ui import logger
+from bika.ui.interfaces import IBikaUILayer
+from senaite.api import get_request
+
+
+def is_installed():
+    request = get_request()
+    return IBikaUILayer.providedBy(request)
 
 
 def post_install(portal_setup):

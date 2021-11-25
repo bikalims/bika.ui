@@ -1,0 +1,17 @@
+#senaite-toolbar {
+    background-color: #f8f9fa;
+}
+#senaite-toolbar a {
+    color: darkslategray;
+}
+#senaite-toolbar a:hover {
+    color: slateblue;
+}
+#viewlet-listing-table-title a img {
+    color: darkgrey;
+}
+
+ul.navbar-nav .node-icon img {
+    height:22px;
+    width:22px;
+}

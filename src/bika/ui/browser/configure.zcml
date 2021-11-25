@@ -1,7 +1,18 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="bika.ui">
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        xmlns="http://namespaces.zope.org/zope"
+        i18n_domain="bika.ui">
+
+<include package="plone.resource"/>
+    <plone:static directory="static" type="plone" name="bika.ui.static"/>
+
+    <browser:viewlet
+            name="bika.ui.localstyles"
+            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+            class=".localstyles.LocalStylesViewlet"
+            permission="zope2.View"
+            layer="bika.ui.interfaces.IBikaUILayer"/>
 
   <browser:page
       for="*"
