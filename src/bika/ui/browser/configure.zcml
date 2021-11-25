@@ -8,16 +8,9 @@
     <plone:static directory="static" type="plone" name="bika.ui.static"/>
 
     <browser:viewlet
-            name="plone.links.favicon"
-            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-            class=".favicon.FaviconViewlet"
-            permission="zope2.View"
-            layer="bika.ui.interfaces.IBikaUILayer"/>
-
-    <browser:viewlet
             name="bika.ui.localstyles"
             manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-            class=".localstyles.LocalStylesViewlet"
+            class="bika.ui.browser.localstyles.LocalStylesViewlet"
             permission="zope2.View"
             layer="bika.ui.interfaces.IBikaUILayer"/>
 
