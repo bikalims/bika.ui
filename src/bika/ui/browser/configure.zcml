@@ -14,4 +14,10 @@
             permission="zope2.View"
             layer="bika.ui.interfaces.IBikaUILayer"/>
 
+    <subscriber
+            for="senaite.core.browser.globals.interfaces.ISenaiteTheme
+                 *"
+            provides="senaite.core.browser.globals.interfaces.IIconProvider"
+            factory="bika.ui.browser.icons.IconProvider"/>
+
 </configure>

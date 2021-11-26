@@ -2,30 +2,22 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="bika.ui">
 
-  <!-- Override Bootstrap Helper View -->
-  <browser:page
-      name="bootstrapview"
-      for="*"
-      class="bika.ui.browser.bootstrap.BootstrapView"
-      allowed_interface="senaite.core.browser.bootstrap.bootstrap.IBootstrapView"
-      permission="zope2.View"
-      layer="bika.ui.interfaces.IBikaUILayer"/>
+    <!-- favicon must be an override.
+         Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
+    <browser:viewlet
+            name="plone.links.favicon"
+            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+            class="bika.ui.browser.favicon.FaviconViewlet"
+            permission="zope2.View"/>
 
-  <!-- SENAITE Setup View -->
-  <browser:page
-      name="lims-setup"
-      for="*"
-      class="bika.ui.browser.setupview.SetupView"
-      permission="zope2.View"
-      layer="bika.ui.interfaces.IBikaUILayer"/>
-
-  <!-- favicon must be an override.  I think this is because at
-       parts/omelette/plone/app/layout/links/configure.zcml:5 there is no
-       layer=Core. Therefore no layer here, either. -->
-  <browser:viewlet
-          name="plone.links.favicon"
-          manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-          class="bika.ui.browser.favicon.FaviconViewlet"
-          permission="zope2.View"/>
+    <!-- bootstrapview must be an override.
+         Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
+    <browser:page
+            name="bootstrapview"
+            for="*"
+            class="bika.ui.browser.bootstrap.BootstrapView"
+            allowed_interface="senaite.core.browser.bootstrap.bootstrap.IBootstrapView"
+            permission="zope2.View"
+            layer="senaite.core.interfaces.ISenaiteCore"/>
 
 </configure>
