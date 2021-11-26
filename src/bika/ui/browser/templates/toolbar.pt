@@ -1,0 +1,109 @@
+<nav id="senaite-toolbar"
+     class="navbar static-top navbar-expand-md"
+     tal:define="context_state view/context_state;
+                 portal_state view/portal_state;
+                 global_sections python:view.get_global_sections();
+                 language_selector python:view.get_language_selector();
+                 personal_bar python:view.get_personal_bar()"
+     i18n:domain="senaite.core">
+
+  <!-- Navbar Brand Icon -->
+  <a class="navbar-brand" href="#" tal:attributes="href portal_state/portal_url">
+    <img tal:attributes="src python:view.get_toolbar_logo();style python:view.get_toolbar_styles()" />
+  </a>
+asdf
+  <!-- Navbar Toggle Button -->
+  <button class="navbar-toggler btn btn-outline-light" type="button" data-toggle="collapse" data-target="#toolbarContent" aria-controls="toolbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Navbar Menu Items -->
+  <div class="collapse navbar-collapse" id="toolbarContent">
+
+    <!-- left -->
+    <ul class="nav navbar-nav mr-auto content-views">
+      <!-- contentviews -->
+      <div tal:replace="structure view/base_render"></div>
+    </ul>
+
+    <!-- right -->
+    <ul class="navbar-nav ml-auto">
+
+      <!-- Global Sections -->
+      <li class="nav-item" tal:condition="personal_bar/user_name">
+        <div tal:replace="structure global_sections/render"></div>
+      </li>
+
+      <!-- Language Selector -->
+      <li class="nav-item">
+        <div tal:replace="structure language_selector/template"></div>
+      </li>
+
+      <!-- Search trigger -->
+      <li class="nav-item" tal:condition="personal_bar/user_name">
+        <a class="nav-link"
+           title="Press Ctrl+Space to trigger the Spotlight search"
+           i18n:attributes="title"
+           tal:attributes="href string:${portal_state/portal_url}/spotlight">
+          <i class="fas fa-search"></i>
+        </a>
+      </li>
+
+      <!-- LIMS Setup -->
+      <li class="nav-item" tal:condition="view/is_manager">
+        <a class="nav-link"
+           tal:attributes="href view/get_lims_setup_url">
+          <span tal:omit-tag="">
+            <i class="fas fa-cog"></i>
+          </span>
+        </a>
+      </li>
+
+      <!-- Personal Bar Menu -->
+      <li class="nav-item dropdown" tal:condition="personal_bar/user_name">
+        <a href="#"
+           class="nav-link dropdown-toggle"
+           id="navbarUserDropdown"
+           role="button"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false"
+           tal:attributes="href personal_bar/homelink_url">
+          <span tal:replace="personal_bar/user_name" />
+        </a>
+        <!-- Personal Bar Dropdown Items -->
+        <ul class="dropdown-menu dropdown-menu-right"
+            tal:define="url view/context_state/current_page_url">
+          <li class="nav-item"
+              tal:repeat="action personal_bar/user_actions">
+            <a href=""
+               tal:define="selected python:action['href'] == url"
+               tal:attributes="action; class python:selected and 'active nav-link' or 'nav-link'">
+              <tal:islogout condition="python:action['id'] == 'personaltools-logout'">
+                <i class="fas fa-sign-out-alt"></i>
+              </tal:islogout>
+              <tal:actionname tal:content="action/title">
+                action title
+              </tal:actionname>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Login/Register -->
+      <li class="nav-item" tal:condition="not:personal_bar/user_name">
+        <div tal:omit-tag="python:1" tal:repeat="action personal_bar/user_actions">
+          <a href="" tal:attributes="href action/href; class string:nav-link">
+            <tal:actionname tal:content="action/title">
+              action title
+            </tal:actionname>
+            <tal:islogout condition="python:action['id'] == 'personaltools-logout'">
+              <span class="icon-logout"></span>
+            </tal:islogout>
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>

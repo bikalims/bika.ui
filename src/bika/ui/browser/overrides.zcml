@@ -20,4 +20,13 @@
             permission="zope2.View"
             layer="senaite.core.interfaces.ISenaiteCore"/>
 
+    <!-- plone toolbar must be an override also.
+         Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
+    <browser:viewletManager
+        name="plone.toolbar"
+        provides="plone.app.layout.viewlets.interfaces.IToolbar"
+        permission="zope2.View"
+        class="bika.ui.browser.toolbar.ToolbarViewletManager"
+        layer="senaite.core.interfaces.ISenaiteCore" />
+
 </configure>

@@ -1,4 +1,4 @@
 <tal:localstyles define="portal_url view/site_url">
     <link rel="stylesheet"
-             tal:attributes="href string:$portal_url/++plone++bika.ui.static/styles/localstyles.css" />
+             tal:attributes="href string:$portal_url/++plone++bika.ui.static/assets/styles/localstyles.css" />
 </tal:localstyles>
