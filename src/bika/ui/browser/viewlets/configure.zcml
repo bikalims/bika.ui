@@ -1,0 +1,14 @@
+<configure
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        xmlns="http://namespaces.zope.org/zope"
+        i18n_domain="bika.ui">
+
+    <browser:viewlet
+            name="bika.ui.localstyles"
+            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+            class="bika.ui.browser.viewlets.localstyles.LocalStylesViewlet"
+            permission="zope2.View"
+            layer="bika.ui.interfaces.IBikaUILayer"/>
+
+</configure>

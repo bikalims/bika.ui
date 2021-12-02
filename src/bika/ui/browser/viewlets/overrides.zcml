@@ -1,0 +1,24 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="bika.ui">
+
+    <!-- It seems these should be able to declare in configure.zcml
+    with layer=IBikaUILayer.  But, they must be overrides.  Why? -->
+
+    <!-- plone toolbar. -->
+    <browser:viewletManager
+            name="plone.toolbar"
+            provides="plone.app.layout.viewlets.interfaces.IToolbar"
+            permission="zope2.View"
+            class="bika.ui.browser.viewlets.toolbar.ToolbarViewletManager"
+            layer="senaite.core.interfaces.ISenaiteCore"/>
+
+    <!-- favicon -->
+    <browser:viewlet
+            name="plone.links.favicon"
+            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+            class="bika.ui.browser.viewlets.favicon.FaviconViewlet"
+            permission="zope2.View"
+            layer="senaite.core.interfaces.ISenaiteCore"/>
+
+</configure>

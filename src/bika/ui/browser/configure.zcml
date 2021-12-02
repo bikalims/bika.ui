@@ -7,12 +7,7 @@
     <include package="plone.resource"/>
     <plone:static directory="static" type="plone" name="bika.ui.static"/>
 
-    <browser:viewlet
-            name="bika.ui.localstyles"
-            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-            class="bika.ui.browser.localstyles.LocalStylesViewlet"
-            permission="zope2.View"
-            layer="bika.ui.interfaces.IBikaUILayer"/>
+    <include package=".viewlets"/>
 
     <subscriber
             for="senaite.core.browser.globals.interfaces.ISenaiteTheme

@@ -2,16 +2,9 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="bika.ui">
 
-    <!-- favicon must be an override.
-         Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
-    <browser:viewlet
-            name="plone.links.favicon"
-            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-            class="bika.ui.browser.favicon.FaviconViewlet"
-            permission="zope2.View"/>
+    <include file="viewlets/overrides.zcml"/>
 
-    <!-- bootstrapview must be an override.
-         Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
+    <!-- bootstrapview must be an override. Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
     <browser:page
             name="bootstrapview"
             for="*"
@@ -20,13 +13,5 @@
             permission="zope2.View"
             layer="senaite.core.interfaces.ISenaiteCore"/>
 
-    <!-- plone toolbar must be an override also.
-         Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
-    <browser:viewletManager
-        name="plone.toolbar"
-        provides="plone.app.layout.viewlets.interfaces.IToolbar"
-        permission="zope2.View"
-        class="bika.ui.browser.toolbar.ToolbarViewletManager"
-        layer="senaite.core.interfaces.ISenaiteCore" />
 
 </configure>
