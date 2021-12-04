@@ -2,15 +2,4 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="bika.ui">
 
-    <!-- It seems these should declare in configure.zcml with layer=IBikaUILayer,
-         but they only work if done in overrides, why? -->
-
-    <!-- favicon -->
-    <browser:viewlet
-            name="plone.links.favicon"
-            manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-            class="bika.ui.browser.viewlets.favicon.FaviconViewlet"
-            permission="zope2.View"
-            layer="senaite.core.interfaces.ISenaiteCore"/>
-
 </configure>
