@@ -4,7 +4,6 @@
 
     <include file="viewlets/overrides.zcml"/>
 
-    <!-- bootstrapview must be an override. Why doesn't layer=IBikaUILayer in configure.zcml work here? -->
     <browser:page
             name="bootstrapview"
             for="*"
