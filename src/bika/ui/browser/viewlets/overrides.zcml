@@ -5,14 +5,6 @@
     <!-- It seems these should declare in configure.zcml with layer=IBikaUILayer,
          but they only work if done in overrides, why? -->
 
-    <!-- plone toolbar. -->
-    <browser:viewletManager
-            name="plone.toolbar"
-            provides="plone.app.layout.viewlets.interfaces.IToolbar"
-            permission="zope2.View"
-            class="bika.ui.browser.viewlets.toolbar.ToolbarViewletManager"
-            layer="senaite.core.interfaces.ISenaiteCore"/>
-
     <!-- favicon -->
     <browser:viewlet
             name="plone.links.favicon"

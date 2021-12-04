@@ -6,9 +6,11 @@
 
     <five:registerPackage package="." initialize=".initialize"/>
     <includeDependencies package="."/>
-    <browser:jbot directory="jbot" layer="bika.ui.interfaces.IBikaUILayer"/>
+    <browser:jbot directory="jbot"
+                  layer="bika.ui.interfaces.IBikaUILayer"/>
 
     <include package=".browser"/>
     <include file="profiles.zcml"/>
 
 </configure>
+
