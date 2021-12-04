@@ -9,7 +9,7 @@
        aria-haspopup="true"
        aria-expanded="false"
        i18n:domain="plone">
-        <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/senaite.core/regions.png"/>
+        <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/regions.png"/>
     </a>
 
     <!-- Available Languages -->

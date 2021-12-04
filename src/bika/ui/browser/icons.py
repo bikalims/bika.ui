@@ -26,15 +26,12 @@ class IconProvider(object):
             return icons
 
         static = getUtility(IResourceDirectory, name=u"++plone++bika.ui.static")
-        for package in ("senaite.core", "senaite.patient"):
-            for icon in static["assets"]["icons"][package].listDirectory():
-                name, ext = os.path.splitext(icon)
-                this_icon = "{}/{}/{}".format(
-                    "++plone++bika.ui.static/assets/icons", package, icon)
-                icons[name] = this_icon
-                icons[icon] = this_icon
-                # senaite will prefer existing svg, but it will be ignored
-                # if it doesn't exist
-                icons['%s.svg' % name] = "does-not-exist"
+        for icon in static["assets"]["icons"].listDirectory():
+            name, ext = os.path.splitext(icon)
+            this_icon = "++plone++bika.ui.static/assets/icons/{}".format(icon)
+            icons[name] = this_icon
+            icons[icon] = this_icon
+            # senaite will prefer existing svg.
+            # icons['%s.svg' % name] = ""
 
         return icons

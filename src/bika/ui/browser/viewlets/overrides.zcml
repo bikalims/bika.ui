@@ -2,8 +2,8 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="bika.ui">
 
-    <!-- It seems these should be able to declare in configure.zcml
-    with layer=IBikaUILayer.  But, they must be overrides.  Why? -->
+    <!-- It seems these should declare in configure.zcml with layer=IBikaUILayer,
+         but they only work if done in overrides, why? -->
 
     <!-- plone toolbar. -->
     <browser:viewletManager

@@ -46,7 +46,7 @@
            title="Press Ctrl+Space to trigger the Spotlight search"
            i18n:attributes="title"
            tal:attributes="href string:${portal_state/portal_url}/spotlight">
-            <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_state/portal_url}/++plone++bika.ui.static/assets/icons/senaite.core/search.png"/>
+            <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_state/portal_url}/++plone++bika.ui.static/assets/icons/search.png"/>
         </a>
       </li>
 
@@ -55,7 +55,7 @@
         <a class="nav-link"
            tal:attributes="href view/get_lims_setup_url">
           <span tal:omit-tag="">
-              <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_state/portal_url}/++plone++bika.ui.static/assets/icons/senaite.core/setup.png"/>
+              <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_state/portal_url}/++plone++bika.ui.static/assets/icons/setup.png"/>
           </span>
         </a>
       </li>

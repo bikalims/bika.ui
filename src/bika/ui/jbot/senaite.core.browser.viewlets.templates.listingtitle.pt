@@ -1,0 +1,10 @@
+<div class="listing-title-viewlet d-inline-block">
+  <!-- icon -->
+  <div class="d-inline-block align-middle">
+    <img tal:replace="structure view/icon"/>
+  </div>
+  <!-- title -->
+  <h1 class="d-inline-block align-middle"
+      tal:content="view/title">
+  </h1>
+</div>
