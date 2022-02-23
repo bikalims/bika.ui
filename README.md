@@ -1,2 +1,2 @@
 # bika.ui
-Bika specific User Interface
+## Bika User Interface
