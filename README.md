@@ -15,10 +15,12 @@ Proudly sponsored by the [Bika Open Source LIMS collective](https://www.bikalims
 
 ### Contribute
 Issue Tracker: [https://jira.bikalabs.com/](https://jira.bikalabs.com)
+
 Documentation: [https://www.bikalims.org/manual/introduction-and-overview/icons](https://www.bikalims.org/manual/introduction-and-overview/icons)
 
 ### Support
 Please post questions to the Bika Slack channels, request access at info@bikalims.org
+
 User group https://users.bikalims.org/
 
 The project is licensed under the GPLv2
