@@ -11,4 +11,4 @@ Modifying the Navigation bar and its elements are described in the manual at [Br
 
 ![Off white navigation bar in Bika Open Source LIMS](https://www.bikalims.org/images/off-white-navigation-bar-in-bika-open-source-lims)
 
-Proudly sponsored by the [Bika Open Source LIMS collective](https://www.bikalims.org/)
+Proudly sponsored by the [Bika Open Source LIMS collective](https://www.bikalims.org/) and coded by [Bika Lab Systems](https://www.bikalabs.com/)
