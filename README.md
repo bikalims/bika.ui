@@ -12,3 +12,13 @@ Modifying the Navigation bar and its elements are described in the manual at [Br
 ![Off white navigation bar in Bika Open Source LIMS](https://www.bikalims.org/images/off-white-navigation-bar-in-bika-open-source-lims)
 
 Proudly sponsored by the [Bika Open Source LIMS collective](https://www.bikalims.org/) and coded by [Bika Lab Systems](https://www.bikalabs.com/)
+
+### Contribute
+Issue Tracker: [https://jira.bikalabs.com/](https://jira.bikalabs.com)
+Documentation: [https://www.bikalims.org/manual/introduction-and-overview/icons](https://www.bikalims.org/manual/introduction-and-overview/icons)
+
+### Support
+Please post questions to the Bika Slack channels, request access at info@bikalims.org
+User group https://users.bikalims.org/
+
+The project is licensed under the GPLv2
