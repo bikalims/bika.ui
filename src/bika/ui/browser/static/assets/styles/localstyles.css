@@ -1,5 +1,5 @@
 #senaite-toolbar {
-    background-color: #f8f9fa;
+    background-color: #FFF;
 }
 #senaite-toolbar a {
     color: darkslategray;
@@ -8,7 +8,7 @@
     color: slateblue;
 }
 #viewlet-listing-table-title a img {
-    color: darkgrey;
+    color: #FFF;
 }
 ul.navbar-nav .node-icon img {
     height:22px;
