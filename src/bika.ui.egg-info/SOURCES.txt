@@ -14,4 +14,7 @@ src/bika/ui/__init__.py
 src/bika/ui/interfaces.py
 src/bika/ui/setuphandlers.py
 src/bika/ui/browser/__init__.py
+src/bika/ui/browser/bootstrap.py
+src/bika/ui/browser/listings.py
+src/bika/ui/browser/setupview.py
 src/bika/ui/browser/view.py

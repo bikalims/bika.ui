@@ -1,44 +1,16 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:plone="http://namespaces.plone.org/plone">
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:five="http://namespaces.zope.org/five"
+        xmlns:plone="http://namespaces.plone.org/plone">
 
-  <five:registerPackage package="." initialize=".initialize"/>
+    <five:registerPackage package="." initialize=".initialize"/>
+    <includeDependencies package="."/>
+    <browser:jbot directory="jbot"
+                  layer="bika.ui.interfaces.IBikaUILayer"/>
 
-  <include package=".browser" />
-
-  <!-- Static resource directory -->
-  <browser:resourceDirectory
-      name="bika.lims.images"
-      directory="static/lims/images"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
-
-  <browser:resourceDirectory
-      name="bika.health.images"
-      directory="static/health/images"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
-
-  <browser:resourceDirectory
-      name="senaite.sampleimporter.static"
-      directory="static/sampleimporter/"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
-
-  <genericsetup:registerProfile
-      name="default"
-      title="BIKA UI"
-      directory="profiles/default"
-      description="Installs the bika.ui add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-
-  <browser:jbot
-     layer="senaite.core.interfaces.ISenaiteCore"
-     directory="overrides" />
-
+    <include package=".browser"/>
+    <include file="profiles.zcml"/>
 
 </configure>
+

@@ -1,0 +1,21 @@
+<div class="analysis-listing-table"
+         tal:condition="python:view.available()"
+         tal:define="portal_state context/@@plone_portal_state; portal_url portal_state/portal_url;"
+         i18n:domain="senaite.core">
+    <div class="row mb-4">
+        <div class="col-sm-12">
+
+
+            <!-- Analysis listing title and icon -->
+            <h3 tal:define="title view/title|nothing" tal:condition="title">
+                <img alt="sample" style="width:32px" src=""
+                         tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/analysisservice.png" />
+                <span i18n:translate="" tal:content="title"/>
+            </h3>
+
+            <!-- Analyis listing table -->
+            <span tal:replace="structure python:view.contents_table()"/>
+
+        </div>
+    </div>
+</div>

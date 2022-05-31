@@ -1,0 +1,101 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="senaite.core">
+  <head>
+    <title></title>
+  </head>
+  <body tal:define="portal_state context/@@plone_portal_state;
+                    portal_url portal_state/portal_url;">
+
+    <metal:content-title fill-slot="content-title">
+      <h1>
+        <!-- Sample icon -->
+        <i class="sample-icon" title="Sample" i18n:attributes="title">
+            <img alt="sample" style="width:32px" src=""
+                    tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/sample.png" />
+        </i>
+        <!-- Title -->
+        <span class="documentFirstHeading" tal:content="context/id"></span>
+        <!-- Hazardous icon -->
+        <i class="hazardous-icon" title="Hazdardous" i18n:attributes="title"
+           tal:condition="python:view.is_hazardous()">
+            <img alt="sample" style="width:32px" src=""
+                    tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/hazardous.png" />
+        </i>
+        <!-- Exclude Invoice Icon -->
+        <i class="exclude-from-invoice-icon" title="Exclude from invoice" i18n:attributes="title"
+           tal:condition="python:view.exclude_invoice()">
+            <img alt="sample" style="width:32px" src=""
+                    tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/invoice_exclude.png" />
+        </i>
+        <!-- Retest Icon -->
+        <i class="retest-icon" title="Results have been withdrawn" i18n:attributes="title"
+           tal:condition="python:view.is_retest()">
+            <img alt="sample" style="width:32px" src=""
+                    tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/retest.png" />
+        </i>
+      </h1>
+    </metal:content-title>
+
+    <metal:content-description fill-slot="content-description">
+    </metal:content-description>
+
+    <metal:content-core fill-slot="content-core">
+
+      <!-- Header Table -->
+      <div class="row">
+        <div class="col-sm-12">
+          <span tal:replace="structure view/header_table"/>
+        </div>
+      </div>
+      <!-- /Header Table -->
+
+      <!-- Remarks Widget
+           https://github.com/senaite/senaite.core/pull/920 -->
+      <div class="row">
+        <div id="remarks-widget"
+             class="col-sm-12 remarks-widget"
+             tal:define="checkPermission nocall: context/portal_membership/checkPermission;
+                 mode python:'edit' if checkPermission('senaite.core: Field: Edit Remarks', context) else 'view';
+                 field python:context.Schema()['Remarks'];
+                 errors python:{};">
+          <h3>
+            <!-- Remarks icon -->
+            <i class="remarks-icon" title="Remarks" i18n:attributes="title">
+                <img alt="remarks" style="width:32px" src=""
+                        tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/remarks.png" />
+            </i>
+            <span i18n:translate="">Remarks</span>
+          </h3>
+          <metal:widget use-macro="python:context.widget('Remarks', mode=mode)"/>
+        </div>
+      </div>
+      <!-- /Remarks Widget -->
+
+      <!-- Viewlet manager for sample sections -->
+      <div class="row" id="sample-sections">
+        <div class="col-sm-12">
+          <div tal:replace="structure provider:senaite.samplesections"></div>
+        </div>
+      </div>
+
+      <!-- Results interpretation -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>
+            <!-- Resultsinterpretations icon -->
+            <img alt="resultsinterpretation" style="width:32px" src=""
+                    tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/resultsinterpretation.png" />
+            <span i18n:translate="">Results interpretation</span>
+          </h3>
+          <tal:parts replace="structure view/riview"/>
+        </div>
+      </div>
+      <!-- /Results interpretation -->
+
+    </metal:content-core>
+  </body>
+</html>

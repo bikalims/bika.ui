@@ -1,0 +1,16 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="bika.ui">
+
+    <include file="viewlets/overrides.zcml"/>
+
+    <browser:page
+            name="bootstrapview"
+            for="*"
+            class="bika.ui.browser.bootstrap.BootstrapView"
+            allowed_interface="senaite.core.browser.bootstrap.bootstrap.IBootstrapView"
+            permission="zope2.View"
+            layer="senaite.core.interfaces.ISenaiteCore"/>
+
+
+</configure>

@@ -1,15 +1,18 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="bika.ui">
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        xmlns="http://namespaces.zope.org/zope"
+        i18n_domain="bika.ui">
 
-  <browser:page
-      for="*"
-      name="clean"
-      class="bika.ui.browser.view.CleanView"
-      attribute="clean"
-      permission="cmf.ManagePortal"
-      layer="bika.ui.interfaces.IBikaUILayer"
-      />
+    <include package="plone.resource"/>
+    <plone:static directory="static" type="plone" name="bika.ui.static"/>
+
+    <include package=".viewlets"/>
+
+    <subscriber
+            for="senaite.core.browser.globals.interfaces.ISenaiteTheme
+                 *"
+            provides="senaite.core.browser.globals.interfaces.IIconProvider"
+            factory="bika.ui.browser.icons.IconProvider"/>
 
 </configure>

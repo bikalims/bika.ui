@@ -1,0 +1,4 @@
+<layers>
+  <layer name="bika.ui"
+         interface="bika.ui.interfaces.IBikaUILayer" />
+</layers>

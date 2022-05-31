@@ -1,0 +1,19 @@
+#senaite-toolbar {
+    background-color: #FFF;
+}
+#senaite-toolbar a {
+    color: darkslategray;
+}
+#senaite-toolbar a:hover {
+    color: slateblue;
+}
+#viewlet-listing-table-title a img {
+    color: #FFF;
+}
+ul.navbar-nav .node-icon img {
+    height:22px;
+    width:22px;
+}
+#sidebar.minimized ul.submenu li {
+    width: 55px;
+}
