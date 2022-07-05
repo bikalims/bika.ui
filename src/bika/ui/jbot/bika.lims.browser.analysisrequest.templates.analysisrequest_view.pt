@@ -53,27 +53,11 @@
       </div>
       <!-- /Header Table -->
 
-      <!-- Remarks Widget
-           https://github.com/senaite/senaite.core/pull/920 -->
-      <div class="row">
-        <div id="remarks-widget"
-             class="col-sm-12 remarks-widget"
-             tal:define="checkPermission nocall: context/portal_membership/checkPermission;
-                 mode python:'edit' if checkPermission('senaite.core: Field: Edit Remarks', context) else 'view';
-                 field python:context.Schema()['Remarks'];
-                 errors python:{};">
-          <h3>
-            <!-- Remarks icon -->
-            <i class="remarks-icon" title="Remarks" i18n:attributes="title">
-                <img alt="remarks" style="width:32px" src=""
-                        tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/remarks.png" />
-            </i>
-            <span i18n:translate="">Remarks</span>
-          </h3>
-          <metal:widget use-macro="python:context.widget('Remarks', mode=mode)"/>
-        </div>
-      </div>
-      <!-- /Remarks Widget -->
+       <!-- Viewlet manager: above sample sections -->
+      <div class="row" id="above-sample-sections">
+        <div class="col-sm-12">
+          <div tal:replace="structure provider:senaite.abovesamplesections"></div>
+
 
       <!-- Viewlet manager for sample sections -->
       <div class="row" id="sample-sections">
@@ -82,20 +66,12 @@
         </div>
       </div>
 
-      <!-- Results interpretation -->
-      <div class="row">
+      <!-- Viewlet manager: below sample sections -->
+      <div class="row" id="below-sample-sections">
         <div class="col-sm-12">
-          <h3>
-            <!-- Resultsinterpretations icon -->
-            <img alt="resultsinterpretation" style="width:32px" src=""
-                    tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/resultsinterpretation.png" />
-            <span i18n:translate="">Results interpretation</span>
-          </h3>
-          <tal:parts replace="structure view/riview"/>
+          <div tal:replace="structure provider:senaite.belowsamplesections"></div>
         </div>
       </div>
-      <!-- /Results interpretation -->
-
     </metal:content-core>
   </body>
 </html>
