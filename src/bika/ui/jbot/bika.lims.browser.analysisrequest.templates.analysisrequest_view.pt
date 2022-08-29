@@ -45,13 +45,12 @@
 
     <metal:content-core fill-slot="content-core">
 
-      <!-- Header Table -->
+      <!-- Viewlet manager: sample header -->
       <div class="row">
         <div class="col-sm-12">
-          <span tal:replace="structure view/header_table"/>
+          <div tal:replace="structure provider:senaite.sampleheader"></div>
         </div>
       </div>
-      <!-- /Header Table -->
 
        <!-- Viewlet manager: above sample sections -->
       <div class="row" id="above-sample-sections">
