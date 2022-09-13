@@ -1,0 +1,38 @@
+<tal:sections
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  tal:define="portal_tabs view/portal_tabs;
+            portal_state context/@@plone_portal_state;
+            portal_url portal_state/portal_url;"
+  tal:condition="portal_tabs"
+  i18n:domain="plone">
+
+  <nav class="dropdown">
+    <a href="#"
+       class="nav-link dropdown-toggle"
+       data-toggle="dropdown"
+       aria-haspopup="true"
+       aria-expanded="false">
+       <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/outcome.png"/>
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-right"
+        tal:define="selected_tab python:view.selected_portal_tab">
+
+      <tal:block tal:repeat="action view/portal_tabs">
+        <li class="nav-item"
+            tal:define="selected python:action['id'] == selected_tab"
+            tal:condition="action/available|nothing">
+          <a href="#" class="nav-link"
+             tal:attributes="href action/url;
+                             class python:selected and 'active nav-link' or 'nav-link';
+                             title action/description|action/title">
+            <span tal:content="action/title"></span>
+          </a>
+        </li>
+      </tal:block>
+    </ul>
+  </nav>
+
+</tal:sections>
