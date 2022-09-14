@@ -37,9 +37,8 @@
                             title name">
             <span tal:content="name"/>
           </a>
-        </li>asdf
+        </li>
       </tal:language>
-        asdf
     </ul>
   </nav>
 </tal:language>
