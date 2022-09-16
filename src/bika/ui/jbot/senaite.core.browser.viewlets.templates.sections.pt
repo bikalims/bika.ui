@@ -14,7 +14,7 @@
        data-toggle="dropdown"
        aria-haspopup="true"
        aria-expanded="false">
-       <img width="24px" src="" alt="icon" tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/outcome.png"/>
+       <img src="" alt="icon" tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/outcome.png"/>
     </a>
 
     <ul class="dropdown-menu dropdown-menu-right"
