@@ -24,3 +24,4 @@ Please post questions to the Bika Slack channels, request access at info@bikalim
 User group https://users.bikalims.org/
 
 The project is licensed under the GPLv2
+Copyright (C) 2020 Bika Lab Systems https://www.bikalabs.com/
