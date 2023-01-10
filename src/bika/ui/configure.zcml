@@ -9,6 +9,7 @@
     <browser:jbot directory="jbot"
                   layer="bika.ui.interfaces.IBikaUILayer"/>
 
+    <plone:static directory="browser/static/assets/" type="senaite_theme"/>
     <include package=".browser"/>
     <include file="profiles.zcml"/>
 
