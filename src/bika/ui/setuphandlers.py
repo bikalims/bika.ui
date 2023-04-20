@@ -2,6 +2,8 @@ from bika.ui import PROFILE_ID
 from bika.ui import logger
 from bika.ui.interfaces import IBikaUILayer
 from plone.api.portal import set_registry_record
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 from senaite.api import get_request
 from senaite.core.setuphandlers import _run_import_step
 
@@ -18,6 +20,7 @@ def install(context):
     portal = context.getSite()
     _run_import_step(portal, "skins", PROFILE_ID)
     _run_import_step(portal, "browserlayer", PROFILE_ID)
+    add_languages(portal)
     logger.info("BIKA.UI install handler [DONE]")
 
 
@@ -47,3 +50,14 @@ def reset_settings(portal):
         set_registry_record(key, val)
 
     logger.info("BIKA.UI Reset core registry defaults [DONE]")
+
+
+def add_languages(portal):
+    """Add en-gb language
+    """
+    registry = getUtility(IRegistry)
+    if 'plone.available_languages' in registry:
+        languages = registry['plone.available_languages']
+        if 'en-gb' not in languages:
+            languages.append('en-gb')
+        registry['plone.available_languages'] = languages
