@@ -1,9 +1,9 @@
 import os
 
 from plone.memoize.instance import memoize
-from senaite.api import get_portal_type
-from senaite.api import get_title
-from senaite.api import get_tool
+from bika.lims.api import get_portal_type
+from bika.lims.api import get_title
+from bika.lims.api import get_tool
 from senaite.core.browser.viewlets import listings
 
 
@@ -19,7 +19,6 @@ class ListingTableTitleViewlet(listings.ListingTableTitleViewlet):
         icon = fti and fti.getIcon()  # handle non-type fti for bbb
         if not icon:
             return ""
-        print('asdf')
         title = get_title(self.context)
         name = os.path.basename(icon)
         portal_url = self.portal_state.portal_url()

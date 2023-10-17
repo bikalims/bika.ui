@@ -4,7 +4,7 @@ from bika.ui.interfaces import IBikaUILayer
 from plone.api.portal import set_registry_record
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
-from senaite.api import get_request
+from bika.lims.api import get_request
 from senaite.core.setuphandlers import _run_import_step
 
 

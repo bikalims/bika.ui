@@ -2,9 +2,9 @@ from os.path import basename
 from os.path import splitext
 
 from bika.ui.setuphandlers import is_installed
-from senaite.api import get_portal_type
-from senaite.api import get_title
-from senaite.api import get_tool
+from bika.lims.api import get_portal_type
+from bika.lims.api import get_title
+from bika.lims.api import get_tool
 from senaite.core.browser.bootstrap import bootstrap
 from zope.interface import implementer
 
