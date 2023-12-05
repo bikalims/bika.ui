@@ -21,8 +21,15 @@ class ListingTableTitleViewlet(listings.ListingTableTitleViewlet):
             return ""
         title = get_title(self.context)
         name = os.path.basename(icon)
+        path_prefix = "{}/++plone++bika.ui.static/assets/icons"
+
+        if name == "sample" or name == "batch":
+            qi = get_tool("portal_quickinstaller")
+            if qi.isProductInstalled("senaite.patient"):
+                path_prefix = "{}/++plone++bika.ui.static/assets/patient"
+
         portal_url = self.portal_state.portal_url()
-        path = '{}/++plone++bika.ui.static/assets/icons'.format(portal_url)
+        path = path_prefix.format(portal_url)
         url = '{}/{}.png'.format(path, name)
         tag = "<img title='{}' src='{}' width='24' class='' />".format(
             title, url)

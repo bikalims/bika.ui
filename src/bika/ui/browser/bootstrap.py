@@ -9,6 +9,7 @@ from senaite.core.browser.bootstrap import bootstrap
 from zope.interface import implementer
 
 PATH = "++plone++bika.ui.static/assets/icons"
+PATH_patient = "++plone++bika.ui.static/assets/patient"
 
 WIDTH = "24px"
 
@@ -32,10 +33,16 @@ class BootstrapView(bootstrap.BootstrapView):
         title = get_title(brain_or_object)
         icon_basename = splitext(basename(icon))[0]
 
-        # bika.ui icon png
+        # bika.ui patient png
+        qi = get_tool("portal_quickinstaller")
+        if qi.isProductInstalled("senaite.patient"):
+            icon_fn_patient = "{}/{}.png".format(PATH_patient, icon_basename)
+            if self.resource_exists(icon_fn_patient):
+                return self.img_tag(title=title, icon=icon_fn_patient, **kw)
+
+        # bika.ui png
         icon_fn = "{}/{}.png".format(PATH, icon_basename)
         if self.resource_exists(icon_fn):
             return self.img_tag(title=title, icon=icon_fn, **kw)
-
         # default from core
         return super(BootstrapView, self).get_icon_for(brain_or_object, **kw)

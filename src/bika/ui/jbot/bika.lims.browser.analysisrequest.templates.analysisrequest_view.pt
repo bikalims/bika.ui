@@ -13,10 +13,18 @@
     <metal:content-title fill-slot="content-title">
       <h1>
         <!-- Sample icon -->
-        <i class="sample-icon" title="Sample" i18n:attributes="title">
+        <i class="sample-icon" title="Sample" i18n:attributes="title"
+	   tal:condition="python: not here.portal_quickinstaller.isProductInstalled('senaite.patient')">
             <img alt="sample" style="width:32px" src=""
                     tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/icons/sample.png" />
         </i>
+        <!-- Sample icon patient -->
+        <i class="sample-icon" title="Sample" i18n:attributes="title"
+	   tal:condition="python: here.portal_quickinstaller.isProductInstalled('senaite.patient')">
+            <img alt="sample" style="width:32px" src=""
+                    tal:attributes="src string:${portal_url}/++plone++bika.ui.static/assets/patient/sample.png" />
+        </i>
+
         <!-- Title -->
         <span class="documentFirstHeading" tal:content="context/id"></span>
         <!-- Hazardous icon -->
