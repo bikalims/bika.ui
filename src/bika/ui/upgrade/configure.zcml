@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="bika.ui">
+
+ <genericsetup:upgradeStep
+     title="Upgrade to BIKA.UI 1.0.1"
+     description="Change workflow Dispatch to Dispose on a sample"
+     source="1.0.0"
+     destination="1.0.1"
+     handler="bika.ui.upgrade.v01_00_001.upgrade"
+     profile="bika.ui:default"/>
+
+</configure>
