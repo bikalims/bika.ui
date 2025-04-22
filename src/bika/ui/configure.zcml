@@ -11,6 +11,7 @@
 
     <plone:static directory="browser/static/assets/" type="senaite_theme"/>
     <include package=".browser"/>
+    <include package=".upgrade"/>
     <include file="profiles.zcml"/>
 
 </configure>
