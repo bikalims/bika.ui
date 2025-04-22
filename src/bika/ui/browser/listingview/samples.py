@@ -21,7 +21,6 @@ class SamplesListingViewAdapter(object):
         if not is_installed():
             return
 
-        import pdb; pdb.set_trace()
         for i in self.listing.review_states:
             if i["title"] == "Dispatched":
                 i["title"] = _("Disposed")
