@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title i18n:translate="">Install SENAITE LIMS</title>
+    <title i18n:translate="">Install Bika LIMS</title>
     <link rel="stylesheet" type="text/css"
           tal:attributes="href string:${context/absolute_url}/++plone++senaite.core.static/modules/bootstrap/css/bootstrap.min.css"
           href="bootstrap.min.css" />
@@ -29,7 +29,7 @@
           <h1>
             <img src="senaite-logo.png"
                  height="30"
-                 tal:attributes="src string:${context/absolute_url}/++plone++senaite.core.static/images/senaite.svg" />
+                 tal:attributes="src string:${context/absolute_url}/++plone++bika.ui.static/assets/images/bikalimslogo.jpg" />
             <small class="lead">Site Installation</small>
           </h1>
           <hr/>
@@ -211,7 +211,7 @@
 
                 <div class="formControls mt-2">
                   <input type="hidden" name="form.submitted:boolean" value="True" />
-                  <input type="submit" name="submit" value="Create SENAITE Site"
+                  <input type="submit" name="submit" value="Create Bika LIMS Site"
                          class="btn btn-primary"
                          i18n:attributes="value;" />
                 </div>
