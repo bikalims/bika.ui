@@ -5,12 +5,35 @@
     <include file="viewlets/overrides.zcml"/>
 
     <browser:page
-            name="bootstrapview"
-            for="*"
-            class="bika.ui.browser.bootstrap.BootstrapView"
-            allowed_interface="senaite.core.browser.bootstrap.bootstrap.IBootstrapView"
-            permission="zope2.View"
-            layer="senaite.core.interfaces.ISenaiteCore"/>
+        name="bootstrapview"
+        for="*"
+        class="bika.ui.browser.bootstrap.BootstrapView"
+        allowed_interface="senaite.core.browser.bootstrap.bootstrap.IBootstrapView"
+        permission="zope2.View"
+        layer="senaite.core.interfaces.ISenaiteCore"/>
 
+    <browser:page
+        for="OFS.interfaces.IApplication"
+        name="senaite-overview"
+        class="Products.CMFPlone.browser.admin.Overview"
+        permission="zope.Public"
+        template="overrides/templates/senaite-overview.pt"
+        />
+
+    <browser:page
+        for="OFS.interfaces.IApplication"
+        name="senaite-addsite"
+        class="senaite.core.browser.install.view.AddSENAITESite"
+        permission="zope2.ViewManagementScreens"
+        template="overrides/templates/senaite-addsite.pt"
+        />
+
+    <browser:page
+        for="OFS.Folder.Folder"
+        name="senaite-addsite"
+        class="senaite.core.browser.install.view.AddSENAITESite"
+        permission="zope2.ViewManagementScreens"
+        template="overrides/templates/senaite-addsite.pt"
+        />
 
 </configure>

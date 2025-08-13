@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="senaite.core">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title i18n:translate="">Welcome to SENAITE</title>
+    <link rel="stylesheet" type="text/css"
+          tal:attributes="href string:${context/absolute_url}/++plone++senaite.core.static/modules/bootstrap/css/bootstrap.min.css"
+          href="bootstrap.min.css" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon"
+          tal:attributes="href string:${context/absolute_url}/++plone++senaite.core.static/images/favicon.ico"/>
+  </head>
+
+  <body tal:define="sites view/sites">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+
+          <div id="text">
+            <h1>
+              <img src="senaite-logo.png"
+                   height="30"
+                   tal:attributes="src string:${context/absolute_url}/++plone++senaite.core.static/images/senaite.svg" />
+              <small class="lead">Enterprise Open Source Laboratory System</small>
+            </h1>
+            <hr/>
+
+            <ul class="list-group">
+              <tal:block tal:condition="sites">
+                <tal:one tal:condition="python:len(sites) == 1">
+                  <tal tal:repeat="site sites">
+                    <li class="list-group-item">
+                      <span class="prominent">
+                        <a href="#"
+                          class="btn btn-outline-secondary btn-sm"
+                          tal:attributes="href site/absolute_url"
+                          title="Go to your instance"
+                          i18n:attributes="title;">
+                          <img src="favicon.ico"
+                              height="16"
+                              tal:attributes="src string:${context/absolute_url}/++plone++senaite.core.static/images/favicon.ico" />
+                          <span i18n:translate="">View your SENAITE site</span>
+                        </a>
+                      </span>
+                      <div class="upgrade-warning"
+                          tal:condition="python:view.outdated(site)">
+                        <span i18n:translate="">
+                          This site configuration is outdated and needs to be
+                          upgraded:</span>
+                        <form action=""
+                              style="display: inline;"
+                              method="get"
+                              tal:attributes="action python:view.upgrade_url(site)">
+                          <input tal:condition="not:view/can_manage"
+                                type="hidden" name="came_from"
+                                tal:attributes="value python:view.upgrade_url(site, can_manage=True)"/>
+                          <input type="submit"
+                                class="plone-btn-secondary"
+                                value="Upgrade&hellip;"
+                                i18n:attributes="value label_upgrade_hellip" />
+                        </form>
+                      </div>
+                    </li>
+                  </tal>
+                </tal:one>
+
+                <tal:many tal:condition="python:len(sites) &gt; 1">
+                  <h2 id="multiple-sites" i18n:translate=""> You have multiple SENAITE sites:</h2>
+                  <ul class="list-group">
+                    <li class="list-group-item" tal:repeat="site sites">
+                      <span class="prominent">
+                        <a href="#"
+                           tal:attributes="href site/absolute_url;
+                                 title site/Title;"
+                           class="btn btn-outline-secondary btn-sm">
+                          <img src="favicon.ico"
+                               height="16"
+                               tal:attributes="src string:${context/absolute_url}/++plone++senaite.core.static/images/favicon.ico" />
+                          <span tal:content="site/Title"></span>
+                          <span class="small" tal:content="string: (${site/getId})"></span>
+                        </a>
+                      </span>
+                      <div class="upgrade-warning"
+                           tal:condition="python:view.outdated(site)">
+                        <span i18n:translate="">
+                          This site configuration is outdated and
+                          needs to be upgraded:
+                        </span>
+                        <form action=""
+                              style="display: inline;"
+                              method="get"
+                              tal:attributes="action python:view.upgrade_url(site)">
+                          <input tal:condition="not:view/can_manage"
+                                 type="hidden" name="came_from"
+                                 tal:attributes="value python:view.upgrade_url(site, can_manage=True)"/>
+                          <input type="submit"
+                                 class="btn btn-secondary"
+                                 value="Upgrade&hellip;"
+                                 i18n:attributes="value label_upgrade_hellip" />
+                        </form>
+
+                      </div>
+                    </li>
+                  </ul>
+                </tal:many>
+
+              </tal:block>
+
+              <li class="list-group-item">
+                <!-- No SENAITE site added yet -->
+                <span i18n:translate="" tal:condition="not:sites">
+                  Your SENAITE site has not been added yet:
+                </span>
+                <span i18n:translate="" tal:condition="sites">
+                  You can add another SENAITE site:
+                </span>
+                <form id="add-plone-site"
+                      method="get"
+                      action="#"
+                      tal:define="site_number python: '' if not sites else len(sites) + 1"
+                      tal:attributes="action string:${context/absolute_url}/@@senaite-addsite">
+                  <input type="hidden" name="site_id" value="senaite${site_number}" />
+                  <input type="hidden" name="site_title" value="SENAITE LIMS" />
+                  <input type="submit"
+                         class="btn btn-success"
+                         i18n:attributes="value;"
+                         value="Create a new SENAITE site" />
+                  <a class="btn btn-outline-secondary"
+                     i18n:translate=""
+                     tal:attributes="href string:${context/absolute_url}/@@senaite-addsite?site_id=senaite${site_number}&site_title=SENAITE LIMS&amp;advanced=1">
+                    Advanced
+                  </a>
+                </form>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- Community Links -->
+          <div class="row">
+            <div class="col-sm-12">
+              <hr/>
+              <div i18n:translate="" class="lead">
+                Meet the community, browse the code and get support on
+              </div>
+              <ul class="list-inline flex-column flex-sm-row">
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://www.senaite.com" title="Website" target="_blank">Website</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://community.senaite.com" title="SENAITE community" target="_blank">Community Site</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://gitter.im/senaite/Lobby" title="Gitter Chat" target="_blank">Gitter Chat</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://github.com/senaite" title="GitHub" target="_blank">GitHub</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://twitter.com/senaitelims" title="Twitter" target="_blank">Twitter</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
