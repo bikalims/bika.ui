@@ -31,7 +31,7 @@
       <value_type type="plone.registry.field.ASCIILine" />
     </field>
     <value>
-      <element key="height">50px</element>
+      <element key="height">70px</element>
     </value>
   </record>
 

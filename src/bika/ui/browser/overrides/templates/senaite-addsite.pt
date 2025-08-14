@@ -30,6 +30,8 @@
             <img src="senaite-logo.png"
                  height="70"
                  tal:attributes="src string:${context/absolute_url}/++plone++bika.ui.static/assets/images/bikalimslogo.jpg" />
+          </h1>
+          <h1>
             <small class="lead">Site Installation</small>
           </h1>
           <hr/>
