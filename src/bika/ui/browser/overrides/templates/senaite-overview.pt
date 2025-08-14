@@ -16,7 +16,7 @@
           tal:attributes="href string:${context/absolute_url}/++plone++senaite.core.static/modules/bootstrap/css/bootstrap.min.css"
           href="bootstrap.min.css" />
     <link href="favicon.ico" rel="icon" type="image/x-icon"
-          tal:attributes="href string:${context/absolute_url}/++plone++senaite.core.static/images/favicon.ico"/>
+          tal:attributes="href string:${context/absolute_url}/++plone++bika.ui.static/assets/images/favicon.png"/>
   </head>
 
   <body tal:define="sites view/sites">
@@ -29,7 +29,7 @@
           <div id="text">
             <h1>
               <img src="senaite-logo.png"
-                   height="30"
+                   height="70"
                    tal:attributes="src string:${context/absolute_url}/++plone++bika.ui.static/assets/images/bikalimslogo.jpg" />
               <small class="lead">Enterprise Open Source Laboratory System</small>
             </h1>
@@ -154,11 +154,12 @@
                 Meet the community, browse the code and get support on
               </div>
               <ul class="list-inline flex-column flex-sm-row">
-                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://www.senaite.com" title="Website" target="_blank">Website</a></li>
-                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://community.senaite.com" title="SENAITE community" target="_blank">Community Site</a></li>
-                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://gitter.im/senaite/Lobby" title="Gitter Chat" target="_blank">Gitter Chat</a></li>
-                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://github.com/senaite" title="GitHub" target="_blank">GitHub</a></li>
-                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://twitter.com/senaitelims" title="Twitter" target="_blank">Twitter</a></li>
+                <li class="list-inline-item">
+                  <a class="btn btn-outline-secondary" href="https://www.bikalabs.com" title="Website" target="_blank">Website</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://www.bikalims.org" title="Bika LIMS community" target="_blank">Community Site</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="mailto:info@bikalabs.com?subject=Please%20subscribe me%20to%20Bika%20Slack" title="Slack Chat" target="_blank">Slack Chat</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://github.com/bikalims" title="GitHub" target="_blank">GitHub</a></li>
+                <li class="list-inline-item"><a class="btn btn-outline-secondary" href="https://twitter.com/bikalims" title="Twitter" target="_blank">Twitter</a></li>
               </ul>
             </div>
           </div>

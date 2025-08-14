@@ -15,7 +15,7 @@
           tal:attributes="href string:${context/absolute_url}/++plone++senaite.core.static/modules/bootstrap/css/bootstrap.min.css"
           href="bootstrap.min.css" />
     <link href="favicon.ico" rel="icon" type="image/x-icon"
-          tal:attributes="href string:${context/absolute_url}/++plone++senaite.core.static/images/favicon.ico"/>
+          tal:attributes="href string:${context/absolute_url}/++plone++bika.ui.static/assets/images/favicon.png"/>
     <!-- required to get the correct timezone selected -->
     <script type="text/javascript" tal:attributes="src string:${context/absolute_url}/++resource++jstz-1.0.4.min.js"></script>
     <script type="text/javascript" tal:attributes="src string:${context/absolute_url}/++resource++plone-admin-ui.js"></script>
@@ -28,7 +28,7 @@
         <div class="col-sm-6 offset-sm-3">
           <h1>
             <img src="senaite-logo.png"
-                 height="30"
+                 height="70"
                  tal:attributes="src string:${context/absolute_url}/++plone++bika.ui.static/assets/images/bikalimslogo.jpg" />
             <small class="lead">Site Installation</small>
           </h1>
