@@ -131,7 +131,7 @@
                       action="#"
                       tal:define="site_number python: '' if not sites else len(sites) + 1"
                       tal:attributes="action string:${context/absolute_url}/@@senaite-addsite">
-                  <input type="hidden" name="site_id" value="senaite${site_number}" />
+                  <input type="hidden" name="site_id" value="lims${site_number}" />
                   <input type="hidden" name="site_title" value="Bika LIMS" />
                   <input type="submit"
                          class="btn btn-success"
