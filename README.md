@@ -1,4 +1,4 @@
-# bika.ui
+## bika.ui
 **User Interface customizations and improvements for Bika LIMS**
 
 This package contains custom skins, templates, CSS, and JavaScript enhancements for SENAITE LIMS.
