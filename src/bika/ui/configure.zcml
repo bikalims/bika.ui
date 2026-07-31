@@ -15,4 +15,3 @@
     <include file="profiles.zcml"/>
 
 </configure>
-

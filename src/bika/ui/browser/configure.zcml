@@ -7,7 +7,6 @@
     <include package="plone.resource"/>
     <plone:static directory="static" type="plone" name="bika.ui.static"/>
 
-    <include package=".listingview"/>
     <include package=".viewlets"/>
 
     <subscriber

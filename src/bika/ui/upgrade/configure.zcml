@@ -11,4 +11,12 @@
      handler="bika.ui.upgrade.v01_00_001.upgrade"
      profile="bika.ui:default"/>
 
+ <genericsetup:upgradeStep
+     title="Upgrade to BIKA.UI 1.0.3"
+     description="Restore the standard sample Dispatch and Dispose workflow"
+     source="1.0.2"
+     destination="1.0.3"
+     handler="bika.ui.upgrade.v01_00_003.upgrade"
+     profile="bika.ui:default"/>
+
 </configure>
