@@ -9,9 +9,8 @@
       <div class="float-right" style="font-size: 0.9em">
         <ul class="nav nav-pills">
           <li><a class="nav-link" href="mailto:info@bikalabs.com?subject=Please subscribe me to Bika Slack" title="Slack messaging - request an invite" target="_blank">Chat Room</a></li>
-          <li><a class="nav-link" href="https://users.bikalims.org" title="The Bika Corral" target="_blank">User Group</a></li>
           <li><a class="nav-link" href="http://eepurl.com/hrI0nD" title="Subscribe to our not so regular newsletter" target="_blank">Newsletter</a></li>
-          <li><a class="nav-link" href="https://twitter.com/BikaLIMS" title="Bika LIMS on Twitter" target="_blank">Twitter</a></li>
+          <li><a class="nav-link" href="https://bikalabs.com/contact/" title="Bika LIMS Support" target="_blank">Support</a></li>
         </ul>
       </div>
     </div>
