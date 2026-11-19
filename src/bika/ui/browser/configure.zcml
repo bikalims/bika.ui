@@ -15,4 +15,9 @@
             provides="senaite.core.browser.globals.interfaces.IIconProvider"
             factory="bika.ui.browser.icons.IconProvider"/>
 
+    <subscriber
+            for="bika.lims.browser.analyses.view.AnalysesView *"
+            provides="senaite.app.listing.interfaces.IListingViewAdapter"
+            factory=".analyses.SpecificationWarningAdapter"/>
+
 </configure>
